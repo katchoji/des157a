@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>Colors: Red, Orange, Yellow, Green, Blue, Purple</h2>
+
+    <script>
+        
+        var colorSelect = ["red", "orange", "yellow", "green", "blue", "purple"];
+
+        let color = prompt("enter your favorite color!");
+
+        if (colorSelect.includes(color)) {
+            document.body.style.backgroundColor = color;
+        } else {
+            console.log("Choose a different color");
+        }
+       
+
+    </script>
+    
+</body>
+</html>
