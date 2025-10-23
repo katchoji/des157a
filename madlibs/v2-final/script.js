@@ -49,13 +49,13 @@
         }
 
         else if(name1 == false){
-            myText = "please provide an adverb"
+            myText = "please provide a name"
             document.querySelector("#name1").focus();
             
         }
 
         else if(noun3 == false){
-            myText = "please provide an adverb"
+            myText = "please provide a noun"
             document.querySelector("#noun3").focus();
             
         }
