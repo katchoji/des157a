@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everypicture</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Kat's Cookbook</h1>
+    </header>
+    <div id="content">
+        <img src="images/curry.png" id="myimage">
+        <img src="images/oyakodon.png" id="fadeinimg">
+        <img src="images/salmon.png" id="fadeinimg">
+        <img src="images/steakdon.png" id="fadeinimg">
+        <img src="images/sashimi.png" id="fadeinimg">
+    </div>
+
+    <p id="links"><a href="#" id ="prev">prev</a><a href="next" id ="next">next</a></p>
+
+    <script>
+
+        let currentImage = 0;
+        const myphotos = ["curry.png", "oyakodon.png", "salmon.png", "steakdon.png", "sashimi.png"];
+
+        const container = document.querySelector("#content");
+        const nextBtn = document.querySelector("#next");
+        const prevBtn = document.querySelector("#previous");
+
+        nextBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            currentImage++;
+            if(currentImage>(myphotos.length-1)){currentImage=0;}
+
+            const newSlide = document.createElement("img");
+            newSlide.src = `slides/${myphotos[currentImage]}`;
+            newSlide.classname = "fadeinimg"
+            container.appendChild(newSlide);
+
+
+            if(container.children.length > 2){
+                container.removeChild(container.children[0]);
+            }
+        });
+
+        prevBtn.addEventListener("click", function(event){
+            event.preventDefault();
+            curentImage--;
+            if(currentImage<0){currentImage=myphotos.length-1;}
+
+            const newSlide = document.createElement("img");
+            newSlide.src = `slides/${myphotos[currentImage]}`;
+            newSlide.classname = "fadeinimg"
+            container.appendChild(newSlide);
+            
+            if(container.children.length > 2){
+                container.removeChild(container.children[0]);}
+
+        });
+
+        function swapImage(){
+            const newSlide = document.createElement("img");
+            newSlide.src = `slides/${myphotos[currentImage]}`;
+            newSlide.className = "fadeinimg";
+            container.appendChild(newSlide);
+
+             if(container.children.length > 2){
+                container.removeChild(container.children[0]);}
+        }
+        
+    </script>
+    
+</body>
+</html>

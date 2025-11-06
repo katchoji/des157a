@@ -1,0 +1,24 @@
+#content{
+    margin: 100px auto 20px auto;
+    width:500px;
+    position: relative;
+}
+
+#content img{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.fadeinimg{
+    animation: fadein 2s;
+}
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
